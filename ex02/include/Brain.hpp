@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:18:28 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/22 14:01:29 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/31 18:50:37 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class	Brain
 		Brain 		&operator=(const Brain &other);
 		void		set_idea(int index, std::string idea);
 		void		set_ideas(std::string idea);
-		std::string get_idea(int index) const;
+		std::string	get_idea(int index) const;
 };
 
 #endif

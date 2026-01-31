@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:08:20 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/22 17:23:39 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/31 18:56:16 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ Cat::~Cat()
 Cat::Cat(const Cat &original):
 	Animal(original), itsBigBrainTime(NULL)
 {
+	std::cout << "Cat's copy constructor was called" << std::endl;
 	this->itsBigBrainTime = new Brain(*original.itsBigBrainTime);
 }
 
 Cat	&Cat::operator=(const Cat &original)
 {
+	std::cout << "Cat's copy assignment operator was called" << std::endl;
 	if (this != &original)
 	{
 		Animal::operator=(original);

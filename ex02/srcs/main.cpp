@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 14:14:11 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/22 17:41:22 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/31 18:58:33 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,10 @@
 
 int	main()
 {
-	Dog dog;
+	// const Animal* meta = new Animal(); //should not compile
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;
+	delete i;
+	return 0;
 }
