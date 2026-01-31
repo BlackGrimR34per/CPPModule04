@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:08:20 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/21 16:50:29 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:53:08 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@ Dog::~Dog()
 	std::cout << "Dog's destructor was called" << std::endl;
 }
 
-Dog::Dog(const Dog &original)
+Dog::Dog(const Dog &original):
+	Animal(original)
 {
-	this->type = original.type;
+	std::cout << "Dog's copy constructor was called" << std::endl;
 }
 
 Dog	&Dog::operator=(const Dog &original)
 {
+	std::cout << "Dog's copy assignment operator was called" << std::endl;
 	if (this != &original)
-		this->type = original.type;
+		Animal::operator=(original);
 	return (*this);
 }
 

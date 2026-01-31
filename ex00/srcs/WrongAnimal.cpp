@@ -14,6 +14,7 @@
 
 WrongAnimal::WrongAnimal()
 {
+	std::cout << "WrongAnimal's default constructor has been called" << std::endl;
 	type = "Any WrongAnimal :0";
 }
 
@@ -28,13 +29,15 @@ WrongAnimal::WrongAnimal(std::string type):
 	std::cout << "WrongAnimal's parameterized constructor has been called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &original)
+WrongAnimal::WrongAnimal(const WrongAnimal &original):
+	type(original.type)
 {
-	this->type = original.type;
+	std::cout << "WrongAnimal's copy constructor was called" << std::endl;
 }
 
 WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &original)
 {
+	std::cout << "WrongAnimal's copy assignment operator was called" << std::endl;
 	if (this != &original)
 		this->type = original.type;
 	return (*this);

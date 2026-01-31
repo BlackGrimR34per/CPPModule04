@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:08:20 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/21 16:50:25 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:29:49 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@ Cat::~Cat()
 	std::cout << "Cat's destructor was called" << std::endl;
 }
 
-Cat::Cat(const Cat &original)
+Cat::Cat(const Cat &original):
+	Animal(original)
 {
-	this->type = original.type;
+		std::cout << "Cat's copy constructor was called" << std::endl;
 }
 
 Cat	&Cat::operator=(const Cat &original)
 {
+	std::cout << "Cat's copy assignment operator was called" << std::endl;
 	if (this != &original)
-		this->type = original.type;
+		Animal::operator=(original);
 	return (*this);
 }
 
