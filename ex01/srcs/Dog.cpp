@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:08:20 by yosherau          #+#    #+#             */
-/*   Updated: 2026/01/22 17:23:34 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:05:53 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ Dog::~Dog()
 Dog::Dog(const Dog &original):
 	Animal(original), itsBigBrainTime(NULL)
 {
+	std::cout << "Dog's copy constructor was called" << std::endl;
 	this->itsBigBrainTime = new Brain(*original.itsBigBrainTime);
 }
 
 Dog	&Dog::operator=(const Dog &original)
 {
+	std::cout << "Dog's copy assignment operator was called" << std::endl;
 	if (this != &original)
 	{
 		Animal::operator=(original);
